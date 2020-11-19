@@ -1,0 +1,57 @@
+<html>
+
+<head>
+  <title>Grocery list</title>
+  <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+  </head>
+
+  <body>
+    <h1>Grocery Lists</h1>
+    <ol id="grocery">
+    </ol>
+
+    <br><br>
+
+    <input id="theInput" placeholder="Write item" type = "text" />
+    <button id="theButton">your item</button>
+
+  <script>
+
+  var groceries = [];
+
+function redrawlist(){
+
+  var list = $("#grocery");
+  list.html("");
+
+  $.each(groceries, function(index,value){
+    $("<li/>").text(value).appendTo(list);
+  });
+}
+
+redrawlist();
+
+$("#theButton").click(function(){
+ var groceryText = $("#theInput").val();
+ groceries.push(groceryText);
+ console.log(grocery);
+
+ redrawlist();
+});
+
+
+var list = $("#grocery");
+
+$.each(grocery, function(index,value){
+  $("<li/>").text(value).appendTo(list);
+});
+
+
+
+  </script>
+
+  </body>
+
+  </html>
